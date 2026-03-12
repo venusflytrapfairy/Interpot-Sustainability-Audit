@@ -1,0 +1,53 @@
+title: Interpot Sustainability Audit
+description: This is a sustainability audit of the activation collection and prediction
+  processes in the InterProt mechanistic interpretability notebook (Adams et al.,
+  2025), which is a project that applies sparse autoencoders (SAE) to the ESM-2 protein
+  language model (650M parameters) to extract interpretable biological features from
+  protein sequences. It then uses those features in a linear probe to predict subcellular
+  localization (identifying the specific part in a cell where a protein resides).
+  The main energy hotspot identified was the repeated single-sequence forward passes
+  through ESM-2 and the SAE during activation harvesting approximately10,461 protein
+  sequences (after length filtering). The energy consumption of this process, as well
+  as its succeeding prediction process, was calculated using the CodeCarbon library.
+keywords:
+- sustainability audit
+- mechanistic interpretability
+- sparse autoencoders
+- SAE
+- ESM-2
+- protein language model
+- biological interpretability
+- artificial intelligence
+repository: https://github.com/venusflytrapfairy/Interpot-Sustainability-Audit
+Computing:
+  Embodied:
+    Carbon footprint:
+      Value (in gCO2e): '13.453 '
+      Source and method: Using energy consumption tracker from CodeCarbon. The precise
+        value was 0.013453 kg CO2eq during the run, which is then 13.453 when converted
+        to grams (g).
+    Depletion of Abiotic Resources (Minerals, Metals): {}
+    Particule Matter Emissions: {}
+    Acidification potential: {}
+    Ionising Radiation Related to Human Health: {}
+    Photochemical Ozone Formation: {}
+    Abiotic Depletion Potential (Fossil Fuels): {}
+    Freshwater Eco-Toxicity Potential: {}
+  Operational:
+    Impact values:
+      Energy consumption (in kWh): '0.096957'
+      Water consumption (in liters): '0'
+    Methods and scope:
+      Software boundaries: {}
+      Tool stages: {}
+      Hardware boundaries:
+        Details on hardware used: 'Google Colab runtime with NVIDIA Tesla T4 GPU (1×,
+          avg. power approximately 34.8 W during run), Intel Xeon CPU @ 2.20 GHz (2
+          cores, constant power 42.5 W), approximately 12.7 GB RAM. Cloud region:
+          Oregon, USA. Measurement via CodeCarbon, using the default nvidia-smi backend
+          for GPU. Tracked during subset run of ESM-2 + SAE inference loop + linear
+          probe training.'
+      Infrastructure:
+        Power Usage Effectiveness (PUE): {}
+        Water usage effectiveness: {}
+      Electricity carbon intensity: {}
